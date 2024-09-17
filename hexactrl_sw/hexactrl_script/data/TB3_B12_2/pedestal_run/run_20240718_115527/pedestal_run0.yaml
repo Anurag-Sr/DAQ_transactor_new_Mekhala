@@ -1,0 +1,9 @@
+metaData:
+  Channel_off: []
+  characMode: 1
+  chip_params: {}
+  hexactrl: 10.254.56.35
+  hw_type: unknown
+  keepRawData: 1
+  keepSummary: 1
+  testName: pedestal_run

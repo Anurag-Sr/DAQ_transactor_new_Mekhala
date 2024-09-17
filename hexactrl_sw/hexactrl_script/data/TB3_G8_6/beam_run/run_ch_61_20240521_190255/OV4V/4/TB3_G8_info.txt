@@ -1,0 +1,27 @@
+####  Before data capture ####
+#  Tileboard2 Slow Control Data
+#  Date, Time: 20240521_190255
+T0: 43.2
+T1: 37.3
+T2: 46.3
+T3: 37.3
+T4: 41.7
+T5: 39.1
+T6: 40.3
+T7: 36.5
+MPPC_BIAS1: 43.8388
+MPPC_BIAS2: 24.8586
+LED_BIAS: 6.758
+####  After data capture ####
+#  Tileboard2 Slow Control Data
+#  Date, Time: 20240521_190255
+T0: 43.4
+T1: 37.3
+T2: 46.4
+T3: 37.4
+T4: 41.8
+T5: 39.1
+T6: 40.3
+T7: 36.3
+MPPC_BIAS1: 43.8513
+MPPC_BIAS2: 24.8835
