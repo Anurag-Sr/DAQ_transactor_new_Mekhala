@@ -1,0 +1,213 @@
+Currently working on software development for the transactor firmware.
+
+Last update: 19.03.2024, by Jia-Hao Li from Gallifrey
+
+
+
+General status: 
+Single Tilemodule test system with transactor is about to finish, I think.
+There are only two issues remain
+1. I2C communication	
+2. external trigger
+
+firmware version: tileboard-tester-v2p0-ROCv3.develop-2024_01_06_20_39_00.52c4c216.noarch.rpm
+
+
+Cool stuff:
+   1. Drew block diagrams about the structure of the two SWAMP versions for comparison and understanding! (pdf and png files can be found here: /home/hgcal/Desktop/Tileboard_DAQ_GitLab_version_2024/DAQ_transactor_new/software_block_diagrams) 
+
+Scripts which are working now:
+1. TB3_SlowControl.py
+2. pedestal_run.py
+3. delay_scan.py
+4. LED_scan_testbeam.py
+
+
+
+
+More detail bugs and ideas of how to solve it are listed below:
+==============================================================================
+
+Problems that need to be solved in the new DAQ:
+
+
+-------------------------------------------------------------------
+Feature 2:
+External trigger is not working in the new DAQ.(Both B12 and D8) 
+=> Guess: Problems in the new firmware and B12 board.  
+=> what's next:
+   1. Set up a pulse generator, and use a multimeter to measure LEMOs and vias.
+   2. Test this with Jon.
+
+=> Already done:
+   1. Verified the "force_value" is working in the fimware block.(got a very useful tool, "devmem", from Jon) 
+   destinations 1-8:
+   0x80120000, 0x80120004, 0x80120008, 0x8012000c, 0x80120010, 0x80120014, 0x80120018, 0x8012001c, and 0x80120020
+   sources 0-6:
+   0x80120040, 0x80120044, 0x80120048, 0x8012004c, 0x80120050, 0x80120054, 0x80120058
+
+   2. Remote controled Mathias to probe the LEMOs for me => don't see anything after I changed the direction of the destination pin. => the idea is: if you set an external trigger pin "destination" to have direction output (set the direction register to 0), and then force its value, you should be able to read that value back on the corresponding external trigger pin "source". You should also be able to probe the corresponding LEMO to see the same value you have forced.
+
+Basically hat I found this week (19.02.2024 - 23.02.2024) is, changing the value of "force_value" in the config yaml does not actully write the value into the firmware...
+Which means I need to debug the trigger xbar script, find out why this script doesn't do what it suppose to do...
+Another interesting thing to try is => try to change force_value with old and new firmware. Perhaps it works in the old fw??
+
+=> Ongoing:
+   1. Test trigger xbar script and double check the value with devmem. => Run the trigger xbar script, and then read out these addresses using devmem, to compare to what the YAML files say the configuration should be.
+
+
+
+Ideas: 
+1. probe the trigger mezzanine: voltage on OEbar, DIR3, A3, B3 on the chip. U1 on mezzanine
+2. Should be able to set force_enable to 1, and then set force_value for any input/source or for any output/destination, and then read the value for the same and see that it always matches force_value
+
+Important information: 
+1. the output_enable_bar in trigger_xbar.xml has to be set to 0
+(the default value of the output_enable is 1. This is a protection for any equipment that might be connected when we first load the firmware. Just in case there might be something connected to one side or the other that could be damaged if we start driving current toward it. So the chip on the mexzzanine will not dirve any current in either direction until a user explicitly enables it.)
+-------------------------------------------------------------------
+
+
+
+
+
+
+-------------------------------------------------------------------
+Feature 3:
+SDA stays low at the beginning of a transaction => cannot make a I2C "START" logic => transaction fail.
+This happen quite often and maybe relate to Feature 1...
+Already tried to change I2C speed => doesn't work...
+
+Guess: This is pure electronics problem -> nothing to do with DAQ. (According to CERN people)
+The issue has been seem by the hexaboard group at CERN.
+
+
+Next thing to try => 
+1. Test same Tileboard with old DAQ and new DAQ to verified this SDA issue does not depend on DAQ version. Do plenty of power cycle.
+   (Not sure if we used the same D8 board in the test beam and still saw the SDA issue, I will find out XDDD.)
+
+2. Check where and how many "sleep" in the old slow control software. Try to also put some more sleep in the new DAQ.
+3. Transactor firmware might also be one of the reason, test this on the firmware level
+ 
+------------------------------------------------------------------- 
+
+
+
+-------------------------------------------------------------------
+Feature 4:
+
+While doing pedestla alignment, the script shows error on the second step
+
+Traceback (most recent call last):
+  File "pedestal_adjustment_Damien_modified/sipm_calibration_test.py", line 163, in <module>
+    pedestal_run.pedestal_run(i2csocket,daqsocket,clisocket,options.odir,options.dut,options.suffix+"_default_trimmed")
+  File "/home/hgcal/Desktop/Tileboard_DAQ_GitLab_version_2024/DAQ_transactor_new/hexactrl-sw/hexactrl-script/pedestal_adjustment_Damien_modified/pedestal_run.py", line 67, in pedestal_run
+    util.saveMetaYaml(odir=odir,i2c=i2csocket,daq=daqsocket,runid=0,testName=testName,keepRawData=1,chip_params={})
+  File "/opt/hexactrl/ROCv3-0811/ctrl/util.py", line 84, in saveMetaYaml
+    meta_yaml['metaData']['characMode']          = i2c.yamlConfig['roc_s0']['sc']['DigitalHalf'][0]['CalibrationSC'] if 'CalibrationSC' in i2c.yamlConfig['roc_s0']['sc']['DigitalHalf'][0] else 0
+KeyError: 'DigitalHalf'
+
+
+And in the init yaml file produce in the second step, it shows:
+roc_s0:
+  sc:
+    error_message: "Configuration error at cfg validation with error \n Invalid config\
+      \ of calib/0/trim_inv/197: larger than maximum value of calib/0/trim_inv/63"
+    flag: ERROR
+
+
+
+-------------------------------------------------------------------
+
+
+
+
+
+
+
+
+============================================================================================================
+====================================Solved features======================================================
+============================================================================================================
+1. Verified external trigger works on D8 and B12 with the Old DAQ.
+
+-------------------------------------------------------------------
+Feature 1: =====> Solved!!!
+
+Initial_full_config.yaml is NOT the same as the yaml we use for ROC configuration. Differences change randomly...
+
+=> Guess: 1. bit shift in the I2C communication between SCA and ROC.(electronic check => scope SDA, SCL)
+          2. problem is in SWAMP => SCA, ROC object
+
+=> What's next: 
+   1. do full ROC configuration with test script by both old SWAMP and merged SWAMP. => test if they can write correct full configuration to ROC.
+      -> if the ROC full configuration works on old SWAMP but not on merged SWAMP -> replace the ROC opject in the merged SWAMP with the version in old SWAMP. 
+      (Hopefully this is the reason of the issue...)   
+   2. Modified the SWAMP scripts to print out all transaction information for debugging.
+   3. Check the I2C trasaction on oscilloscope. Configure ROC parameter one at a time, check every transaction (check error flag of the ROC, PLL_lock, payload).
+
+=> Already tried:
+   1. By using the previous SWAMP library (different ROC, SCA object)
+      Did full ROC configuration (roc0 in B12) 5 times and compared the read-out config -> they are all identical!
+   2. The full configuration of the merged SWAMP is somehow way faster than the previous SWAMP version... Hmmmm....This seems to be very suspicious now...
+
+=> Ongoing:
+   1. Try to use the previous ROC object in the new SWAMP library to see if the bit-shift issue is from the ROC object, if not, try to use the previous SCA object as well.
+      - copied ROCv3.py from /swamp_test to zmq_i2c_swamp/swamp, and renamed it to ROC_old.py. rename the original roc.py in zmq_i2c_swamp/swamp to roc_as_gitlab.py.
+      - also copied dict_utils.py from /swamp_test to zmq_i2c_swamp/swamp
+
+=> Found something:
+   1.In the the "def configure" in the previous SWAMP ROC, there is 
+   if readback:
+                    self.transport.write(self.base_address, reg[0])
+                    self.transport.write(self.base_address + 1, reg[1])
+                    #rback_val = self.transport.read(self.base_address + 2, 1)
+                    rback_val = self.transport.read(self.base_address + 2)
+                    if rback_val != reg[2]:
+                        raise IOError(
+                            f'Read back {rback_val} from {(reg[0], reg[1])} '
+                            f'does not match written value {reg[2]}')
+
+   which doesn't exist in the new ROC.
+   But I need to check in more detail about how it is used.
+
+=> The solution for this feature is to change the transaction id range
+   => self.free_transaction_ids = list(range(1, 1025))  => self.free_transaction_ids = list(range(1, 255))
+The reason why this transaction id range need to be changed in this way is because the ID values 0x00 and 0xff are reserved for interrupt
+packets generated spontaneously by the SCA and should not be used in requests. -> Accroding to the GBT-SCA manual page 18.
+-------------------------------------------------------------------
+============================================================================================================
+============================================================================================================
+
+
+
+
+
+============================================================================================================
+How to debug firmware with "devmem"
+
+first go to where you put the binary file, devmem.
+The file can be put to anywhere you like in the tester.
+
+And then do
+```
+chmod a+x devmem
+sudo ./devmem 0x80120000
+```
+
+for example, if you want to check rigister 0x80120000
+Than do
+```
+sudo ./devmem 0x80120000 32 0x00010000
+sudo ./devmem 0x80120000
+```
+should see 0x00010000
+
+And then do
+```
+sudo ./devmem 0x80120000 32 0x00030000
+sudo ./devmem 0x80120000
+```
+should see 0x01030000
+
+The idea is if we always see bit 24 change from 0 to 1, then we know the "force_value" part of firmware is OK
+==========================================================================================
