@@ -1,0 +1,8 @@
+numpy
+scipy
+pandas
+matplotlib
+seaborn
+pyyaml
+uproot3
+more_itertools
