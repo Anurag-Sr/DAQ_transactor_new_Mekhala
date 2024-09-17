@@ -1,0 +1,12 @@
+# Enable verbose logging.
+if [ "@VERBOSE_LOGGING@" = "TRUE" ]; then
+    set -o xtrace
+    echo "Running preun script for v@CMAKE_PROJECT_VERSION@"
+fi
+
+service_names=`echo "@SERVICE_NAMES@" | sed "s/;/\ /" `
+
+for service_name in $service_names
+do
+    %systemd_preun ${service_name}
+done

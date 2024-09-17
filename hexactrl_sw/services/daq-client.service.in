@@ -1,0 +1,10 @@
+[Unit]
+Description=daq-client start/stop service script
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -c \'@CLI_EXE_PATH@\'
+TimeoutStartSec=0
+
+[Install]
+WantedBy=multi-user.target

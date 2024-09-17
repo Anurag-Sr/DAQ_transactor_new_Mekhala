@@ -1,0 +1,11 @@
+[Unit]
+Description=zmq_server.py start/stop service script
+
+[Service]
+Type=simple
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/bin/bash -c '/usr/bin/python3 @SER_I2C_PATH@'
+TimeoutStartSec=0
+
+[Install]
+WantedBy=multi-user.target

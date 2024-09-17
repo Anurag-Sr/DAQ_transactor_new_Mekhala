@@ -1,0 +1,10 @@
+[Unit]
+Description=daq-client start/stop service script
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -c 'source @SER_ENV_PATH@; @SER_EXE_PATH@ -f @SER_XML_PATH@'
+TimeoutStartSec=0
+
+[Install]
+WantedBy=multi-user.target
