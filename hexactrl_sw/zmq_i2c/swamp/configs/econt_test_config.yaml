@@ -1,0 +1,14 @@
+ChAligner:
+  1:
+    patt_en: 1
+    prbs28_en: 1
+  11:
+    patt_en: 1
+    prbs28_en: 1
+Aligner:
+  Global:
+    snapshot_en: 1
+    i2c_snapshot_en: 1
+AlgoThreshold:
+  32: 1
+  40: 1

@@ -1,0 +1,34 @@
+## Change settings to match HGCROCv3 format
+RocDaqCtrl:
+  Global:
+    hgcroc_hdr_marker: 5
+    sync_header: 0xa
+    sync_body: 0xccccccc
+    first_sync_header: 0x9
+    pass_thru_mode: 1
+    active_erxs: 0x3F
+    simple_mode: 0x1
+    bcr_bucket_default: 0x5
+FormatterBuffer:
+  Global:
+    active_etxs: 0x03
+    idle_pattern: 0xaaaaff
+    link_reset_pattern: 0x1aa
+    errin_mask: 0xff
+    header_marker: 0x154
+ELinkProcessors:
+  Global:
+    veto_pass_fail: 0xffff
+    recon_mode_result: 0x0
+Aligner:
+  Global:
+    orbsyn_cnt_load_val: 0x01
+    orbsyn_cnt_snapshot: 0x11
+    snapshot_en: 0x1
+    match_pattern_val: 0x9ccccccc
+    # freeze_output_enable: 0x0
+    # freeze_output_enable_all_channels_locked: 0x0
+FCtrl:
+  Global:
+    pre_l1a_offset: 0x2
+    capture_fcmd_ctrl: 0x4

@@ -1,0 +1,21 @@
+DigitalHalf:
+  all:
+    L1Offset: 40
+    CalibrationSC: 1
+GlobalAnalog:
+  all:
+    SelExtADC: 0
+ReferenceVoltage:
+  all:
+    IntCtest: 1
+    Calib: 3000
+ch:
+  0: 
+    HighRange: 1
+  20: 
+    HighRange: 1
+  40: 
+    HighRange: 1
+  60: 
+    HighRange: 1
+

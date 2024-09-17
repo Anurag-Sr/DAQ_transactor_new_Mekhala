@@ -1,0 +1,7 @@
+logging==0.4.9.6
+PyYAML==6.0
+pyjson==1.3.0
+nested_dict==1.61
+transitions
+tqdm
+bitstruct==8.11.1

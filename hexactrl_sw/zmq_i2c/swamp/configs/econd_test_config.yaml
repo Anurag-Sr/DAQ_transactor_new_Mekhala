@@ -1,0 +1,58 @@
+Aligner:
+  Global:
+    orbsyn_cnt_load_val: 3
+    orbsyn_cnt_snapshot: 3500
+ChAligner:
+  1:
+    patt_en: 1
+    prbs_en: 1
+  11:
+    patt_en: 1
+    prbs_en: 1
+ClocksAndResets:
+  Global:
+    test_output_select:
+      0: 1
+      1: 1
+ZS:
+  0:
+    zs_lambda:
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+      ]
