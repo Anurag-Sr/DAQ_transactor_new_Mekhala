@@ -1,0 +1,86 @@
+trigger_xbar:
+  destinations:
+    0:
+      name: 'ext_trig_0'
+      source: 6 # Select which trigger input will be routed to this trigger output; default: 6
+      direction : 1 # 1 = INPUT, 0 = OUTPUT; default = 1
+      force_enable : 0 # Force this output to the value in `force_value`; 1: force output, 0: use selected input instead of forcing; default: 0"
+      force_val : 0 # Value to force this output to if `force_enable` is 1; default: 0
+    1:
+      name: 'ext_trig_1'
+      source: 6 # default 6
+      direction : 1 # default 1
+      force_enable : 0 # default 0
+      force_val : 0 # default 0
+    2:
+      name: 'ext_trig_2'
+      source: 6 # default 6
+      direction : 1 # default 1
+      force_enable : 0 # default 0
+      force_val : 0 # default 0
+    3:
+      name: 'ext_trig_3'
+      source: 6 # default 6
+      direction : 1 # default 1
+      force_enable : 0 # default 0
+      force_val : 0 # default 0
+    4:
+      name: 'fc_encoder_extL1A_0'
+      source: 6 # default 6
+      direction : 1 # default 1
+      force_enable : 0 # default 0
+      force_val : 0 # default 0
+    5:
+      name: 'fc_encoder_extL1A_1'
+      source: 1 # default 1
+      direction : 1 # default 1
+      force_enable : 0 # default 0
+      force_val : 0 # default 0
+    6:
+      name: 'fc_encoder_extL1A_2'
+      source: 2 # default 2
+      direction : 1 # default 1
+      force_enable : 0 # default 0
+      force_val : 0 # default 0
+    7:
+      name: 'fc_encoder_extL1A_3'
+      source: 3 # default 3
+      direction : 1 # default 1
+      force_enable : 0 # default 0
+      force_val : 0 # default 0
+    8:
+      name: 'self_trig'
+      source: 3 # default 0
+      direction : 1 # default 1
+      force_enable : 0 # default 0
+      force_val : 0 # default 0
+  sources:
+    0:
+      name: 'ext_trig_0'
+      force_enable  : 0 # default 0
+      force_val : 0 # default 0
+    1:
+      name: 'ext_trig_1'
+      force_enable  : 0 # default 0
+      force_val : 0 # default 0
+    2:
+      name: 'ext_trig_2'
+      force_enable  : 0 # default 0
+      force_val : 0 # default 0
+    3:
+      name: 'ext_trig_3'
+      force_enable  : 0 # default 0
+      force_val : 0 # default 0
+    4:
+      name: 'fc_pulseOut_0'
+      force_enable  : 0 # default 0
+      force_val : 0 # default 0
+    5:
+      name: 'fc_pulseOut_1'
+      force_enable  : 0 # default 0
+      force_val : 0 # default 0
+    6:
+      name: 'self_trigger'
+      force_enable  : 0 # default 0
+      force_val : 0 # default 0
+     

@@ -1,0 +1,58 @@
+trigger_xbar:
+  destinations:
+    0:
+      name: 'ext_trig_0'
+      direction: 'input'
+    1:
+      name: 'ext_trig_1'
+      direction: 'input'
+    2:
+      name: 'ext_trig_2'
+      direction: 'input'
+    3:
+      name: 'ext_trig_3'
+      direction: 'input'
+    4:
+      name: 'fc_encoder_extL1A_0'
+      source: 6
+    5:
+      name: 'fc_encoder_extL1A_1'
+      source: 6
+    6:
+      name: 'fc_encoder_extL1A_2'
+      source: 6
+    7:
+      name: 'fc_encoder_extL1A_3'
+      source: 6
+    8:
+      name: 'self_trig'
+      source: 3
+  sources:
+    0:
+      name: 'ext_trig_0'
+      force_enable  : 0
+      force_value : 0
+    1:
+      name: 'ext_trig_1'
+      force_enable  : 0
+      force_value : 0
+    2:
+      name: 'ext_trig_2'
+      force_enable  : 0
+      force_value : 0
+    3:
+      name: 'ext_trig_3'
+      force_enable  : 1
+      force_value : 1
+    4:
+      name: 'fc_pulseOut_0'
+      force_enable  : 0
+      force_value : 0
+    5:
+      name: 'fc_pulseOut_1'
+      force_enable  : 0
+      force_value : 0
+    6:
+      name: 'self_trigger'
+      force_enable  : 0
+      force_value : 0
