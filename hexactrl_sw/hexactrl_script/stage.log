@@ -1,0 +1,52 @@
+2024-05-21 16:33:10,809 INFO     Start position: h = 199.300000, v = -115.000000
+2024-05-21 16:33:10,809 INFO     Nothing to move on component Z01
+2024-05-21 16:33:10,809 INFO     Nothing to move on component Z00
+2024-05-21 16:33:10,851 INFO     Final position: h = 199.300000, v = -115.000000
+2024-05-21 16:34:20,503 INFO     Start position: h = 199.300000, v = -115.000000
+2024-05-21 16:34:20,724 INFO     current value while moving: 198.300000
+2024-05-21 16:34:20,947 INFO     current value while moving: 195.300000
+2024-05-21 16:34:21,169 INFO     current value while moving: 192.300000
+2024-05-21 16:34:21,391 INFO     current value while moving: 189.600000
+2024-05-21 16:34:21,613 INFO     current value while moving: 188.800000
+2024-05-21 16:34:21,835 INFO     current value while moving: 188.100000
+2024-05-21 16:34:22,058 INFO     current value while moving: 187.300000
+2024-05-21 16:34:22,279 INFO     current value while moving: 186.600000
+2024-05-21 16:34:22,502 INFO     current value while moving: 185.900000
+2024-05-21 16:34:22,724 INFO     current value while moving: 185.100000
+2024-05-21 16:34:22,945 INFO     current value while moving: 184.400000
+2024-05-21 16:34:23,167 INFO     current value while moving: 183.600000
+2024-05-21 16:34:23,388 INFO     current value while moving: 182.900000
+2024-05-21 16:34:23,610 INFO     current value while moving: 182.200000
+2024-05-21 16:34:23,833 INFO     current value while moving: 181.400000
+2024-05-21 16:34:24,056 INFO     current value while moving: 180.800000
+2024-05-21 16:34:24,279 INFO     current value while moving: 180.700000
+2024-05-21 16:34:24,501 INFO     current value while moving: 180.700000
+2024-05-21 16:34:24,724 INFO     current value while moving: 180.700000
+2024-05-21 16:34:24,947 INFO     current value while moving: 180.700000
+2024-05-21 16:34:24,947 INFO     movement stopped
+2024-05-21 16:34:24,947 INFO     Nothing to move on component Z00
+2024-05-21 16:34:24,988 INFO     Final position: h = 180.700000, v = -115.000000
+2024-05-21 16:35:17,891 INFO     Start position: h = 180.700000, v = -115.000000
+2024-05-21 16:35:18,112 INFO     current value while moving: 181.200000
+2024-05-21 16:35:18,335 INFO     current value while moving: 181.900000
+2024-05-21 16:35:18,558 INFO     current value while moving: 182.700000
+2024-05-21 16:35:18,780 INFO     current value while moving: 183.400000
+2024-05-21 16:35:19,002 INFO     current value while moving: 184.200000
+2024-05-21 16:35:19,225 INFO     current value while moving: 184.900000
+2024-05-21 16:35:19,448 INFO     current value while moving: 185.700000
+2024-05-21 16:35:19,670 INFO     current value while moving: 186.400000
+2024-05-21 16:35:19,892 INFO     current value while moving: 187.200000
+2024-05-21 16:35:20,115 INFO     current value while moving: 187.900000
+2024-05-21 16:35:20,338 INFO     current value while moving: 188.600000
+2024-05-21 16:35:20,561 INFO     current value while moving: 189.300000
+2024-05-21 16:35:20,782 INFO     current value while moving: 189.300000
+2024-05-21 16:35:21,004 INFO     current value while moving: 189.300000
+2024-05-21 16:35:21,227 INFO     current value while moving: 189.300000
+2024-05-21 16:35:21,450 INFO     current value while moving: 189.300000
+2024-05-21 16:35:21,450 INFO     movement stopped
+2024-05-21 16:35:21,450 INFO     Nothing to move on component Z00
+2024-05-21 16:35:21,492 INFO     Final position: h = 189.300000, v = -115.000000
+2024-05-21 16:36:56,355 INFO     Start position: h = 189.300000, v = -115.000000
+2024-05-21 16:36:56,356 INFO     Nothing to move on component Z01
+2024-05-21 16:36:56,356 INFO     Nothing to move on component Z00
+2024-05-21 16:36:56,397 INFO     Final position: h = 189.300000, v = -115.000000
