@@ -1,0 +1,10 @@
+[Unit]
+Description=daq-client start/stop service script
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -c 'source /opt/hexactrl/ROCv3/etc/env.sh; /opt/hexactrl/ROCv3/bin/daq-server -f /opt/hexactrl/ROCv3/etc/connection.xml'
+TimeoutStartSec=0
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<node id="TOP">
+
+  <node id="fastcontrol_axi"      module="file://modules/fastcontrol_axi.xml"       address="0x80008000"/>
+  <node id="fastcontrol_recv_axi" module="file://modules/fastcontrol_recv_axi.xml"  address="0x80009000"/>
+
+  <!-- Pairing of link_capture_[i] and axi_bram_ctrl[i] should be correct.
+  Was cross-checked in pl.dtsi where the Vivado indices for the blocks are preserved
+   -->
+  <node id="link_capture_0"  module="file://modules/link_capture_axi.xml" address="0x8000a000"/>
+  <node id="axi_bram_ctrl_0" module="file://modules/axi_bram_ctrl.xml"    address="0x80a00000"/>
+</node>

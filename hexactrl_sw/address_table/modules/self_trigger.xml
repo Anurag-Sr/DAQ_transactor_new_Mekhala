@@ -1,0 +1,41 @@
+<!-- Link to some documentation should be inserted here -->
+
+<node>    
+
+  <node id="command" address="0x0">
+    <node id="signature"    mask="0x1"        permission="r" description="module signature (to check this is indeed the start of the self trig block registers)"/>
+    <node id="link_valid"   mask="0xf0000000" permission="r" description="link valid flag : 0=not valid; 1=valid"/>
+  </node>
+
+  <node id="control" address="0x1">
+    <node id="start"    mask="0x1" permission="rw" description="1: start operation if links are aligned ; 0: stop operation"/>
+    <node id="trg_edge" mask="0x2" permission="rw" description="0: falling edge trigger, 1: rising edge trigger"/>
+    <node id="trg_mode" mask="0xc" permission="rw" description="select self trigger operational mode - 0: general threshold to all links; 1: all link summed + global threshold; 2: each channel with individual threshold; 3: external trigger"/>
+  </node>
+
+  <node id="trig_count" address="0x2" permission="rw" description="counting number of triggers, reset at the start command"/>
+
+  <node id="channel_mask" address="0x3">
+    <node id="low"  address="0x0" permission="rw" mask="0xffffffff" description="Low bit part of 48 bit channel bit registers. Each bit enables/disables individual channel (16 trig cell per sector)"/> 
+    <node id="high" address="0x1" permission="rw" mask="0x0000ffff" description="High bit part of 48 bit channel bit registers"/> 
+  </node>
+   
+  <node id="threshold" address="0x5">
+    <node id="general"  address="0x0" permission="rw" mask="0x00ffffff" description="general threshold used in operation mode 0 (0x330 by default)"/> 
+    <node id="global"   address="0x1" permission="rw" mask="0x00ffffff" description="global threshold used in operation mode 1 (0x10000 by default)"/> 
+  </node>
+
+  <node id="trig_time" address="0x7" permission="r" description="trig time w.r.t. the to trigger BX, LSB corresponds to ~0.8ns"/>
+
+  <node id="local_threshold" address="0x10">
+    <node id="channel0" address="0x0" permission="rw" mask="0x00ffffff" description="Threshold for channel (trig cell) 0 used in operation mode 2 (0x300 by default)"/>
+    <node id="channel1" address="0x1" permission="rw" mask="0x00ffffff" description="Threshold for channel (trig cell) 1 used in operation mode 2 (0x300 by default)"/>
+    <node id="channel2" address="0x2" permission="rw" mask="0x00ffffff" description="Threshold for channel (trig cell) 2 used in operation mode 2 (0x300 by default)"/>
+    <node id="channel3" address="0x3" permission="rw" mask="0x00ffffff" description="Threshold for channel (trig cell) 3 used in operation mode 2 (0x300 by default)"/>
+    <node id="channel4" address="0x4" permission="rw" mask="0x00ffffff" description="Threshold for channel (trig cell) 4 used in operation mode 2 (0x300 by default)"/>
+    <node id="channel5" address="0x5" permission="rw" mask="0x00ffffff" description="Threshold for channel (trig cell) 5 used in operation mode 2 (0x300 by default)"/>
+  </node>
+  
+  <!-- <node id="local_thresholds" address="0x10" permission="rw" mask="0x00ffffff" mode="incremental" size="48" description="Local threshold array for all channels (trig cell) used in operation mode 2 (0x300 by default)"/> -->
+</node>
+  

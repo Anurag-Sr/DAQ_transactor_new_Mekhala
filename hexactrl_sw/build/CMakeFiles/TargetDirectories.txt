@@ -1,0 +1,4 @@
+/home/HGCAL_dev/sw/hexactrl-sw/build/CMakeFiles/daq-server.dir
+/home/HGCAL_dev/sw/hexactrl-sw/build/CMakeFiles/hexactrl.dir
+/home/HGCAL_dev/sw/hexactrl-sw/build/CMakeFiles/ipbus-ctrl.dir
+/home/HGCAL_dev/sw/hexactrl-sw/build/CMakeFiles/objectlib.dir
