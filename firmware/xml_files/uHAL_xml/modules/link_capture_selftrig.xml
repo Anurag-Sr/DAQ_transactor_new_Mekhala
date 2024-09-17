@@ -1,0 +1,7 @@
+<node>
+    <!-- Based on https://gitlab.cern.ch/cms-hgcal-firmware/link_capture/-/blob/LinkCapture_v0.3/src/hdl/link_capture.v for offsets between links
+	   and on https://gitlab.cern.ch/cms-hgcal-firmware/link_capture/-/blob/LinkCapture_v0.3/src/hdl/AXI_decode.v for link register addresses (see link_capture_axi_channels.xml) 
+    -->
+    <node id="global"  address="0x00" module="file://link_capture_selftrig_global.xml"  description="global link capture registers"/>
+    <node id="link0"   address="0x10" module="file://link_capture_axi_channel.xml" description="link 0 capture control"/>
+</node>

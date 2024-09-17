@@ -1,0 +1,209 @@
+<!-- https://gitlab.cern.ch/cms-hgcal-firmware/utilityip/blob/master/trigger_xbar/trigger_xbar.xml -->
+
+<node>
+	<node id="output0" address="0x0">
+		<node id="input_select" mask="0x0000000f" permission="rw" description="Select which trigger input will be routed to this trigger output; default: 6"/>
+		<node id="direction"    mask="0x00000100" permission="rw" description="Direction for external trigger pins; 1: INPUT, 0: OUTPUT; default: 1"/>
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this output to the value in `force_value`; 1: force output, 0: use selected input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this output to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this output"/>
+	</node>
+	<node id="output1" address="0x1">
+		<node id="input_select" mask="0x0000000f" permission="rw" description="Select which trigger input will be routed to this trigger output; default: 6"/>
+		<node id="direction"    mask="0x00000100" permission="rw" description="Direction for external trigger pins; 1: INPUT, 0: OUTPUT; default: 1"/>
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this output to the value in `force_value`; 1: force output, 0: use selected input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this output to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this output"/>
+	</node>
+	<node id="output2" address="0x2">
+		<node id="input_select" mask="0x0000000f" permission="rw" description="Select which trigger input will be routed to this trigger output; default: 6"/>
+		<node id="direction"    mask="0x00000100" permission="rw" description="Direction for external trigger pins; 1: INPUT, 0: OUTPUT; default: 1"/>
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this output to the value in `force_value`; 1: force output, 0: use selected input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this output to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this output"/>
+	</node>
+	<node id="output3" address="0x3">
+		<node id="input_select" mask="0x0000000f" permission="rw" description="Select which trigger input will be routed to this trigger output; default: 6"/>
+		<node id="direction"    mask="0x00000100" permission="rw" description="Direction for external trigger pins; 1: INPUT, 0: OUTPUT; default: 1"/>
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this output to the value in `force_value`; 1: force output, 0: use selected input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this output to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this output"/>
+	</node>
+	<node id="output4" address="0x4">
+		<node id="input_select" mask="0x0000000f" permission="rw" description="Select which trigger input will be routed to this trigger output; default: 6"/>
+		<node id="direction"    mask="0x00000100" permission="rw" description="Direction for external trigger pins; 1: INPUT, 0: OUTPUT; default: 1"/>
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this output to the value in `force_value`; 1: force output, 0: use selected input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this output to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this output"/>
+	</node>
+	<node id="output5" address="0x5">
+		<node id="input_select" mask="0x0000000f" permission="rw" description="Select which trigger input will be routed to this trigger output; default: 1"/>
+		<node id="direction"    mask="0x00000100" permission="rw" description="Direction for external trigger pins; 1: INPUT, 0: OUTPUT; default: 1"/>
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this output to the value in `force_value`; 1: force output, 0: use selected input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this output to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this output"/>
+	</node>
+	<node id="output6" address="0x6">
+		<node id="input_select" mask="0x0000000f" permission="rw" description="Select which trigger input will be routed to this trigger output; default: 2"/>
+		<node id="direction"    mask="0x00000100" permission="rw" description="Direction for external trigger pins; 1: INPUT, 0: OUTPUT; default: 1"/>
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this output to the value in `force_value`; 1: force output, 0: use selected input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this output to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this output"/>
+	</node>
+	<node id="output7" address="0x7">
+		<node id="input_select" mask="0x0000000f" permission="rw" description="Select which trigger input will be routed to this trigger output; default: 3"/>
+		<node id="direction"    mask="0x00000100" permission="rw" description="Direction for external trigger pins; 1: INPUT, 0: OUTPUT; default: 1"/>
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this output to the value in `force_value`; 1: force output, 0: use selected input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this output to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this output"/>
+	</node>
+	<node id="output8" address="0x8">
+		<node id="input_select" mask="0x0000000f" permission="rw" description="Select which trigger input will be routed to this trigger output; default: 0"/>
+		<node id="direction"    mask="0x00000100" permission="rw" description="Direction for external trigger pins; 1: INPUT, 0: OUTPUT; default: 1"/>
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this output to the value in `force_value`; 1: force output, 0: use selected input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this output to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this output"/>
+	</node>
+	<node id="output9" address="0x9">
+		<node id="input_select" mask="0x0000000f" permission="rw" description="Select which trigger input will be routed to this trigger output; default: 0"/>
+		<node id="direction"    mask="0x00000100" permission="rw" description="Direction for external trigger pins; 1: INPUT, 0: OUTPUT; default: 1"/>
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this output to the value in `force_value`; 1: force output, 0: use selected input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this output to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this output"/>
+	</node>
+	<node id="output10" address="0xa">
+		<node id="input_select" mask="0x0000000f" permission="rw" description="Select which trigger input will be routed to this trigger output; default: 0"/>
+		<node id="direction"    mask="0x00000100" permission="rw" description="Direction for external trigger pins; 1: INPUT, 0: OUTPUT; default: 1"/>
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this output to the value in `force_value`; 1: force output, 0: use selected input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this output to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this output"/>
+	</node>
+	<node id="output11" address="0xb">
+		<node id="input_select" mask="0x0000000f" permission="rw" description="Select which trigger input will be routed to this trigger output; default: 0"/>
+		<node id="direction"    mask="0x00000100" permission="rw" description="Direction for external trigger pins; 1: INPUT, 0: OUTPUT; default: 1"/>
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this output to the value in `force_value`; 1: force output, 0: use selected input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this output to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this output"/>
+	</node>
+	<node id="output12" address="0xc">
+		<node id="input_select" mask="0x0000000f" permission="rw" description="Select which trigger input will be routed to this trigger output; default: 0"/>
+		<node id="direction"    mask="0x00000100" permission="rw" description="Direction for external trigger pins; 1: INPUT, 0: OUTPUT; default: 1"/>
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this output to the value in `force_value`; 1: force output, 0: use selected input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this output to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this output"/>
+	</node>
+	<node id="output13" address="0xd">
+		<node id="input_select" mask="0x0000000f" permission="rw" description="Select which trigger input will be routed to this trigger output; default: 0"/>
+		<node id="direction"    mask="0x00000100" permission="rw" description="Direction for external trigger pins; 1: INPUT, 0: OUTPUT; default: 1"/>
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this output to the value in `force_value`; 1: force output, 0: use selected input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this output to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this output"/>
+	</node>
+	<node id="output14" address="0xe">
+		<node id="input_select" mask="0x0000000f" permission="rw" description="Select which trigger input will be routed to this trigger output; default: 0"/>
+		<node id="direction"    mask="0x00000100" permission="rw" description="Direction for external trigger pins; 1: INPUT, 0: OUTPUT; default: 1"/>
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this output to the value in `force_value`; 1: force output, 0: use selected input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this output to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this output"/>
+	</node>
+	<node id="output15" address="0xf">
+		<node id="input_select" mask="0x0000000f" permission="rw" description="Select which trigger input will be routed to this trigger output; default: 0"/>
+		<node id="direction"    mask="0x00000100" permission="rw" description="Direction for external trigger pins; 1: INPUT, 0: OUTPUT; default: 1"/>
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this output to the value in `force_value`; 1: force output, 0: use selected input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this output to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this output"/>
+	</node>
+
+	<node id="input0" address="0x10">
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this input to the value in `force_value`; 1: force input, 0: use actual input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this input to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this input"/>
+	</node>
+	<node id="input1" address="0x11">
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this input to the value in `force_value`; 1: force input, 0: use actual input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this input to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this input"/>
+	</node>
+	<node id="input2" address="0x12">
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this input to the value in `force_value`; 1: force input, 0: use actual input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this input to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this input"/>
+	</node>
+	<node id="input3" address="0x13">
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this input to the value in `force_value`; 1: force input, 0: use actual input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this input to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this input"/>
+	</node>
+	<node id="input4" address="0x14">
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this input to the value in `force_value`; 1: force input, 0: use actual input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this input to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this input"/>
+	</node>
+	<node id="input5" address="0x15">
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this input to the value in `force_value`; 1: force input, 0: use actual input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this input to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this input"/>
+	</node>
+	<node id="input6" address="0x16">
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this input to the value in `force_value`; 1: force input, 0: use actual input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this input to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this input"/>
+	</node>
+	<node id="input7" address="0x17">
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this input to the value in `force_value`; 1: force input, 0: use actual input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this input to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this input"/>
+	</node>
+	<node id="input8" address="0x18">
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this input to the value in `force_value`; 1: force input, 0: use actual input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this input to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this input"/>
+	</node>
+	<node id="input9" address="0x19">
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this input to the value in `force_value`; 1: force input, 0: use actual input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this input to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this input"/>
+	</node>
+	<node id="input10" address="0x1a">
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this input to the value in `force_value`; 1: force input, 0: use actual input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this input to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this input"/>
+	</node>
+	<node id="input11" address="0x1b">
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this input to the value in `force_value`; 1: force input, 0: use actual input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this input to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this input"/>
+	</node>
+	<node id="input12" address="0x1c">
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this input to the value in `force_value`; 1: force input, 0: use actual input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this input to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this input"/>
+	</node>
+	<node id="input13" address="0x1d">
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this input to the value in `force_value`; 1: force input, 0: use actual input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this input to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this input"/>
+	</node>
+	<node id="input14" address="0x1e">
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this input to the value in `force_value`; 1: force input, 0: use actual input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this input to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this input"/>
+	</node>
+	<node id="input15" address="0x1f">
+		<node id="force_enable" mask="0x00010000" permission="rw" description="Force this input to the value in `force_value`; 1: force input, 0: use actual input instead of forcing; default: 0"/>
+		<node id="force_value"  mask="0x00020000" permission="rw" description="Value to force this input to if `force_enable` is 1; default: 0"/>
+		<node id="value"        mask="0x01000000" permission="r"  description="Read-only; Current value present on this input"/>
+	</node>
+		
+	<node id="output_enable_bar" address="0x20" mask="0x00000001" permission="rw" description="Output enable (inverted) for the bus transceiver; 1: DISABLE, 0: ENABLE; default: 1 (DISABLE)"/>
+
+	<node id="N_INPUTS"   address="0x21" mask="0xffffffff" permission="r" description="Number of inputs available in this block"/>
+	<node id="N_OUTPUTS"  address="0x22" mask="0xffffffff" permission="r" description="Number of outputs available in this block"/>
+	<node id="N_EXTERNAL" address="0x23" mask="0xffffffff" permission="r" description="Number of IOs that are external"/>
+
+	<node id="block_version" address="0x3f">
+		<node id="major" mask="0xffff0000" permission="r" description="Major version"/>
+		<node id="minor" mask="0x0000ff00" permission="r" description="Minor version"/>
+		<node id="patch" mask="0x000000ff" permission="r" description="Patch version"/>
+	</node>
+</node>

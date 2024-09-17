@@ -1,0 +1,7 @@
+<node>
+  <!-- Memory page segmentation based on
+  https://gitlab.cern.ch/cms-hgcal-firmware/link_capture/blob/426ed8a5ec5ff944c78945894852da2e3c7cb906/src/hdl/link_capture.v#L446-454
+  (BRAM is in bytes)
+  -->
+  <node id="link0"  address="0x0" module="file://link_capture_FIFO_channel.xml" description="link 0 FIFO"/>
+</node >

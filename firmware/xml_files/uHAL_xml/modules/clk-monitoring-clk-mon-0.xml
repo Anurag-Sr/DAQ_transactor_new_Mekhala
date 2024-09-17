@@ -1,0 +1,10 @@
+<node>
+    <node id="rate0"              address="0x0" permission="r"  description="Clock rate of clock 0 in kHz"/>
+    <node id="pllunlock0"         address="0x1" permission="rw" description="Number of PLL unlocks for clock 0, write 1 to reset"/>
+    <node id="rate1"              address="0x2" permission="r"  description="Clock rate of clock 1 in kHz"/>
+    <node id="pllunlock1"         address="0x3" permission="rw" description="Number of PLL unlocks for clock 1, write 1 to reset"/>
+    <node id="rate2"              address="0x4" permission="r"  description="Clock rate of clock 2 in kHz"/>
+    <node id="pllunlock2"         address="0x5" permission="rw" description="Number of PLL unlocks for clock 2, write 1 to reset"/>
+    <node id="rate3"              address="0x6" permission="r"  description="Clock rate of clock 3 in kHz"/>
+    <node id="pllunlock3"         address="0x7" permission="rw" description="Number of PLL unlocks for clock 3, write 1 to reset"/>
+</node>

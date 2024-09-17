@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<node id="TOP">
+  <node id="AXI-axi-cdma-0"	    module="file://modules/cdma_axi.xml"	          address="0x80000000"/>
+  <node id="Transactor-Slow-Control-0_config"	    module="file://modules/Transactor-Slow-Control-0_config.xml"	          address="0x80200000"/>
+  <node id="Transactor-Slow-Control-0_data"	    module="file://modules/Transactor-Slow-Control-0_data.xml"	          address="0x80300000"/>
+  <node id="clk-monitoring-clk-mon-0"	    module="file://modules/clk-monitoring-clk-mon-0.xml"	          address="0x80060000"/>
+  <node id="clk-mux-0"	    module="file://modules/clk-mux-0.xml"	          address="0x800c0000"/>
+  <node id="fastcontrol"	    module="file://modules/fastcontrol.xml"	          address="0x80020000"/>
+  <node id="fastcontrol_recv"	    module="file://modules/fastcontrol_recv.xml"	          address="0x80010000"/>
+  <node id="bram_daq"	    module="file://modules/bram_daq_FIFO.xml"	          address="0x80030000"/>
+  <node id="link_capture_daq"	    module="file://modules/link_capture_daq.xml"	          address="0x80090000"/>
+  <node id="bram_trg"	    module="file://modules/bram_trg_FIFO.xml"	          address="0x80040000"/>
+  <node id="link_capture_trg"	    module="file://modules/link_capture_trg.xml"	          address="0x80080000"/>
+  <node id="bram_selftrig"	    module="file://modules/bram_selftrig_FIFO.xml"	          address="0x800b0000"/>
+  <node id="link_capture_selftrig"	    module="file://modules/link_capture_selftrig.xml"	          address="0x800d0000"/>
+  <node id="self_trigger"	    module="file://modules/self_trigger.xml"	          address="0x800a0000"/>
+  <node id="trigger_xbar"	    module="file://modules/trigger_xbar.xml"	          address="0x80120000"/>
+</node>

@@ -1,0 +1,14 @@
+<node>
+  <node id="SCA_TX_BRAM0" address="0x0">
+    <node id="Data" permission="rw" mode="incremental" size="0x1000"/>
+  </node>
+  <node id="SCA_RX_BRAM0" address="0x1000">
+    <node id="Data" permission="rw" mode="incremental" size="0x1000"/>
+  </node>
+  <node id="IC_TX_BRAM0" address="0x2000">
+    <node id="Data" permission="rw" mode="incremental" size="0x1000"/>
+  </node>
+  <node id="IC_RX_BRAM0" address="0x3000">
+    <node id="Data" permission="rw" mode="incremental" size="0x1000"/>
+  </node>
+</node>

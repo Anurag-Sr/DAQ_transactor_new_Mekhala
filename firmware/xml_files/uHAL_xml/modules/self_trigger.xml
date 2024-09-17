@@ -1,0 +1,96 @@
+<!-- https://gitlab.cern.ch/cms-hgcal-firmware/hgcroc-self-trigger -->
+
+<node>    
+
+  <node id="command" address="0x0">
+    <node id="link_valid"   mask="0x00000001" permission="r" description="link valid flag : 0=not valid; 1=valid"/>
+    <node id="signature"    mask="0xf0000000" permission="r" description="module signature (to check this is indeed the start of the self trig block registers)"/>
+  </node>
+
+  <node id="control" address="0x1">
+    <node id="start"                  mask="0x1"    permission="rw" description="1: start operation if links are aligned ; 0: stop operation"/>
+    <node id="trg_edge"               mask="0x2"    permission="rw" description="0: falling edge trigger, 1: rising edge trigger"/>
+    <node id="trg_mode"               mask="0xc"    permission="rw" description="select self trigger operational mode - 0: general threshold to all links; 1: all link summed + global threshold; 2: each channel with individual threshold; 3: external trigger"/>
+    <node id="ext_trig_window_start"  mask="0x1F0"  permission="rw" description="External trigger window start index"/>
+    <node id="ext_trig_window_width"  mask="0x7E00" permission="rw" description="External trigger window width"/>
+  </node>
+
+  <node id="trig_count" address="0x2" permission="rw" description="counting number of triggers, reset at the start command"/>
+
+  <!-- This could use some fine-tuning to adjust it automatically for the actual number of links [JSW, 10 Sep 2021] -->
+  <node id="channel_mask" address="0x3">
+    <node id="low"  address="0x0" permission="rw" mask="0xffffffff" description="Low bit part of 48 bit channel bit registers. Each bit enables/disables individual channel (16 trig cell per sector)"/> 
+    <node id="high" address="0x1" permission="rw" mask="0x0000ffff" description="High bit part of 48 bit channel bit registers"/> 
+  </node>
+   
+  <node id="threshold" address="0x5">
+    <node id="general"  address="0x0" permission="rw" mask="0x00ffffff" description="general threshold used in operation mode 0 (0x330 by default)"/> 
+    <node id="global"   address="0x1" permission="rw" mask="0x00ffffff" description="global threshold used in operation mode 1 (0x10000 by default)"/> 
+  </node>
+
+  <!-- This is probably not needed anymore, as it is replaced by the link capture block -->
+  <node id="trig_time" address="0x7" permission="r" description="trig time w.r.t. the to trigger BX, LSB corresponds to ~0.8ns"/>
+
+  <!-- This could use some fine-tuning to adjust it automatically for the actual number of links [JSW, 10 Sep 2021] -->
+  <node id="local_threshold" address="0x10">
+    <node id="threshold_0" address="0x0">
+      <node id="link_0"  address="0x0" permission="rw" mask="0x00ffffff" description="Threshold 0 for link 0, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_1"  address="0x1" permission="rw" mask="0x00ffffff" description="Threshold 0 for link 1, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_2"  address="0x2" permission="rw" mask="0x00ffffff" description="Threshold 0 for link 2, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_3"  address="0x3" permission="rw" mask="0x00ffffff" description="Threshold 0 for link 3, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_4"  address="0x4" permission="rw" mask="0x00ffffff" description="Threshold 0 for link 4, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_5"  address="0x5" permission="rw" mask="0x00ffffff" description="Threshold 0 for link 5, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_6"  address="0x6" permission="rw" mask="0x00ffffff" description="Threshold 0 for link 6, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_7"  address="0x7" permission="rw" mask="0x00ffffff" description="Threshold 0 for link 7, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_8"  address="0x8" permission="rw" mask="0x00ffffff" description="Threshold 0 for link 8, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_9"  address="0x9" permission="rw" mask="0x00ffffff" description="Threshold 0 for link 9, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_10" address="0xa" permission="rw" mask="0x00ffffff" description="Threshold 0 for link 10, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_11" address="0xb" permission="rw" mask="0x00ffffff" description="Threshold 0 for link 11, used in operation mode 2 (0x300 by default)"/>
+    </node>
+    <node id="threshold_1" address="0xc">
+      <node id="link_0"  address="0x0" permission="rw" mask="0x00ffffff" description="Threshold 1 for link 0, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_1"  address="0x1" permission="rw" mask="0x00ffffff" description="Threshold 1 for link 1, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_2"  address="0x2" permission="rw" mask="0x00ffffff" description="Threshold 1 for link 2, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_3"  address="0x3" permission="rw" mask="0x00ffffff" description="Threshold 1 for link 3, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_4"  address="0x4" permission="rw" mask="0x00ffffff" description="Threshold 1 for link 4, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_5"  address="0x5" permission="rw" mask="0x00ffffff" description="Threshold 1 for link 5, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_6"  address="0x6" permission="rw" mask="0x00ffffff" description="Threshold 1 for link 6, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_7"  address="0x7" permission="rw" mask="0x00ffffff" description="Threshold 1 for link 7, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_8"  address="0x8" permission="rw" mask="0x00ffffff" description="Threshold 1 for link 8, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_9"  address="0x9" permission="rw" mask="0x00ffffff" description="Threshold 1 for link 9, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_10" address="0xa" permission="rw" mask="0x00ffffff" description="Threshold 1 for link 10, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_11" address="0xb" permission="rw" mask="0x00ffffff" description="Threshold 1 for link 11, used in operation mode 2 (0x300 by default)"/>
+    </node>
+    <node id="threshold_2" address="0x18">
+      <node id="link_0"  address="0x0" permission="rw" mask="0x00ffffff" description="Threshold 2 for link 0, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_1"  address="0x1" permission="rw" mask="0x00ffffff" description="Threshold 2 for link 1, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_2"  address="0x2" permission="rw" mask="0x00ffffff" description="Threshold 2 for link 2, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_3"  address="0x3" permission="rw" mask="0x00ffffff" description="Threshold 2 for link 3, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_4"  address="0x4" permission="rw" mask="0x00ffffff" description="Threshold 2 for link 4, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_5"  address="0x5" permission="rw" mask="0x00ffffff" description="Threshold 2 for link 5, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_6"  address="0x6" permission="rw" mask="0x00ffffff" description="Threshold 2 for link 6, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_7"  address="0x7" permission="rw" mask="0x00ffffff" description="Threshold 2 for link 7, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_8"  address="0x8" permission="rw" mask="0x00ffffff" description="Threshold 2 for link 8, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_9"  address="0x9" permission="rw" mask="0x00ffffff" description="Threshold 2 for link 9, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_10" address="0xa" permission="rw" mask="0x00ffffff" description="Threshold 2 for link 10, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_11" address="0xb" permission="rw" mask="0x00ffffff" description="Threshold 2 for link 11, used in operation mode 2 (0x300 by default)"/>
+    </node>
+    <node id="threshold_3" address="0x24">
+      <node id="link_0"  address="0x0" permission="rw" mask="0x00ffffff" description="Threshold 3 for link 0, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_1"  address="0x1" permission="rw" mask="0x00ffffff" description="Threshold 3 for link 1, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_2"  address="0x2" permission="rw" mask="0x00ffffff" description="Threshold 3 for link 2, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_3"  address="0x3" permission="rw" mask="0x00ffffff" description="Threshold 3 for link 3, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_4"  address="0x4" permission="rw" mask="0x00ffffff" description="Threshold 3 for link 4, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_5"  address="0x5" permission="rw" mask="0x00ffffff" description="Threshold 3 for link 5, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_6"  address="0x6" permission="rw" mask="0x00ffffff" description="Threshold 3 for link 6, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_7"  address="0x7" permission="rw" mask="0x00ffffff" description="Threshold 3 for link 7, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_8"  address="0x8" permission="rw" mask="0x00ffffff" description="Threshold 3 for link 8, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_9"  address="0x9" permission="rw" mask="0x00ffffff" description="Threshold 3 for link 9, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_10" address="0xa" permission="rw" mask="0x00ffffff" description="Threshold 3 for link 10, used in operation mode 2 (0x300 by default)"/>
+      <node id="link_11" address="0xb" permission="rw" mask="0x00ffffff" description="Threshold 3 for link 11, used in operation mode 2 (0x300 by default)"/>
+    </node>
+  </node>
+  
+  <!-- <node id="local_thresholds" address="0x10" permission="rw" mask="0x00ffffff" mode="incremental" size="48" description="Local threshold array for all channels (trig cell) used in operation mode 2 (0x300 by default)"/> -->
+</node>
+  

@@ -1,0 +1,15 @@
+<node>
+  <node id="Idle" mask="0x2" permission="r" description="Indicates the state of axi CDMA operations"/>
+  <node id="SGIncid" mask="0x8" permission="r" description="Indicates if AXI CDMA is implemented with SG support"/>
+  <node id="DMAIntErr" mask="0x10" permission="r"  description="Axi internal error"/>
+  <node id="DMASlvErr" mask="0x20" permission="r"  description="Axi slave error response recieved"/>
+  <node id="DMADecErr" mask="0x40" permission="r"  description="Axi decode error"/>
+  <node id="SGIntErr" mask="0x100" permission="r"  description="Internal error in SG mode"/>
+  <node id="SGSlvErr" mask="0x200" permission="r"  description="Indicates an Axi slave error in SG mode"/>
+  <node id="SGDecErr" mask="0x400" permission="r" description="Scatter Gather Decode error"/>
+  <node id="IOC_Irq" mask="0x1000" permission="rw" description="Indicates an interrupt due to a complete transfer"/>
+  <node id="Dly_Irq" mask="0x2000" permission="rw" description="Indicates an interrupt due to a delay timeout"/>
+  <node id="Err_Irq" mask="0x4000" permission="rw" description="Indicates an interrupt due to an error"/>
+  <node id="IRQThreshStat" mask="0xFF0000" permission="r" description="The current interrupt threshold value"/>
+  <node id="IRQDelayStat" mask="0xFF000000" permission="r" description="The current interrupt delay setting"/>
+</node >

@@ -1,0 +1,6 @@
+<node>
+  <node id="TimeoutN"         mask="0x1"    permission="r" description="Negated Timeout error flag"/>
+  <node id="Busy"             mask="0x2"    permission="r" description="Busy bit"/>
+  <node id="zero_cmd"         mask="0x4"    permission="r" description="Indicates if zero transactions after start"/>
+  <node id="NbrTransactions"  mask="0x3FF8" permission="r" description="Nbr of performed transactions."/>
+</node>

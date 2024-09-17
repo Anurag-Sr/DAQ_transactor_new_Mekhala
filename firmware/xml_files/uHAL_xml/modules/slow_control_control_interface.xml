@@ -1,0 +1,5 @@
+<node>
+  <node id="Start"            mask="0x1"    permission="rw" description="Starts new transactions when positive edge occours."/>
+  <node id="Enable"           mask="0x2"    permission="rw" description="Disabled"/>
+  <node id="NbrTransactions"  mask="0x1FFC" permission="rw" description="Nbr of transactions ot perform"/>
+</node>

@@ -1,0 +1,14 @@
+<node>
+  <node id="TailPtrEn" mask="0x2" permission="r" description="Indicate whether Tail Pointer Mode is enabled"/>
+  <node id="Reset" mask="0x4" permission="rw" description="Soft Reset AXI CDMA"/>
+  <node id="SGMode" mask="0x8" permission="rw"  description="Sets scatter/gather mode on 1, simple dma on 0"/>
+  <node id="KeyholeRead" mask="0x10" permission="rw"  description="Enable keyhole read"/>
+  <node id="KeyholeWrite" mask="0x20" permission="rw" description="Enable keyhole write"/>
+  <node id="CyclicBD" mask="0x40" permission="rw" description="Enable cyclic buffer descriptor mode"/>
+  <node id="IOC_IrqEn" mask="0x1000" permission="rw" description="Enable interrupt on complete transfer"/>
+  <node id="Dly_IrqEn" mask="0x2000" permission="rw" description="Delat interrupt enable"/>
+  <node id="Err_IrqEn" mask="0x4000" permission="rw" description="Error interrupt enable"/>
+  <node id="IRQThreshold" mask="0xFF0000" permission="rw" description="Interrupt Threshold"/>
+  <node id="IRQDelay" mask="0xFF000000" permission="rw" description="Interrupt Delay Timeout"/>
+  <node id="Interrupt" address="0xAA" permission="r" description="Interrupt reg (dummy)" tags="interrupt"/>
+</node >

@@ -1,0 +1,8 @@
+<!-- https://gitlab.cern.ch/cms-hgcal-firmware/utilityip/blob/master/AXI_mux/AXI_mux.xml -->
+
+<node>
+	<node id="clk_int_select" address="0x0" mask="0x1" permission="rw" description="1: Use internal clock; 0: Use external clock if present; default: 0"/>
+	<node id="clk_ext_active" address="0x1" mask="0x1" permission="r" description="1: external clock is running; 0: external clock is not running"/>
+	<node id="locked"         address="0x2" mask="0x1" permission="r" description="1: PLL is locked and producing 320 and 40 MHz clocks; 0: PLL is not locked"/>
+	<node id="clk40_ext_rate" address="0x3" mask="0xffffff" permission="r" description="Number of cycles of the external clock during 0.125 ms; multiply by 8000 to get the frequency in MHz"/>
+</node>

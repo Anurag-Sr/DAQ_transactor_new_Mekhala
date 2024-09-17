@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<connections>
+   <connection id="TOP" uri="uioaxi-1.0:///opt/cms-hgcal-firmware/hgc-test-systems/active/uHAL_xml/fw_block_addresses.xml" address_table="file:///opt/cms-hgcal-firmware/hgc-test-systems/active/uHAL_xml/fw_block_addresses.xml"/>
+</connections>

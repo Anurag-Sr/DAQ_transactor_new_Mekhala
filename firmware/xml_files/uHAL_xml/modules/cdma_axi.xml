@@ -1,0 +1,12 @@
+<node>
+  <!-- Memory page segmentation based on
+    https://www.xilinx.com/support/documentation/ip_documentation/axi_cdma/v4_1/pg034-axi-cdma.pdf
+  -->
+  <node id="cdmaCtrl" address="0x0" module="file://cdma_ctrl.xml" description="CDMA Control"/>
+  <node id="cdmaStat" address="0x1" module="file://cdma_status.xml" description="CDMA Status"/>
+  <node id="CurDesc" address="0x2"  description="Current Descriptor pointer"/>
+  <node id="TailDesc" address="0x4" description="Tail Descriptor pointer"/>
+  <node id="SA" address="0x6" description="Source Address"/>
+  <node id="DA" address="0x8" description="Destination Address"/>
+  <node id="BTT" address="0xA" description="Bytes To Transfer"/>
+</node >
